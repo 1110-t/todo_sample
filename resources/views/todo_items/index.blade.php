@@ -7,20 +7,17 @@
 <x-app-layout>
     <x-slot name="header">
 
+        <!-- topの作業一覧の右側に検索フォームが来てほしいのであれば、この中に検索フォームを含めるようにしましょう -->
         <div class="top">
             <a href="{{route('todo_items.index')}}">作業一覧</a>
-        </div>
-
-        <div>ようこそ{{Auth::user()->login_id}}さん</div>
-
-        <div class="search">
             <form method="get" action="{{route('todo_items.index')}}">
+                <!-- できるだけ簡略化していきます -->
                 <input type="text" name="keyword" id="keyword" value="{{$keyword}}">
-                <div class="search-btn">
-                <input type="submit" value="検索">
-                </div>
+                <input class="search-btn" type="submit" value="検索">
             </form>
         </div>
+
+        <p>ようこそ<span class="name">{{Auth::user()->login_id}}</span>さん</p>
             
         <div class="search-msg">
             @if($keyword != " ")
@@ -30,10 +27,10 @@
 
         <x-message :message="session('message')"/>
     </x-slot>
-
-    <x-create-button>作業登録</x-create-button>
     
-    <div class="center">
+    <!-- ヘッダーのレイアウトに合わせるようにしています -->
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <x-create-button>作業登録</x-create-button>
         <table class="table table1">
             <tr>
                 <th class="item">項目名</th>

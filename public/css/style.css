@@ -1,26 +1,34 @@
 .top {
     font-size: 30px;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.search {
-    position: absolute;
-    top: 90px;
-    left: 1000px;
+.top form{
+    display:flex;
+    font-size:20px;
 }
 
-.search-btn {
-    position: absolute;
-    top: 10px;
-    left: 200px;
-    height: 30px;
-    width: 50px;
-    margin-right: 10px;
-    text-align: center;
-    display: flex;
-	justify-content: center;
-	align-items: center;
+input.search-btn {
     color: white;
     background-color: gray;
+    height:100%;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.name{
+    margin:0 8px;
+    font-size:25px;
+}
+
+.table{
+    margin-top:30px;
+}
+
+tr{
+    text-align:left;
 }
 
 .search-msg {
@@ -51,54 +59,13 @@
     color: #dc3545!important;
 }
 
-.center {
-    margin-top: 50px;
-    display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .create {
     width: 500px;
     margin: 15px;
 }
 
-
-.table {
-    width: 80%;
-}
-
-
-.item {
-    
-    height: 30px;
-    width: 25%;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.user-name {
-    
-    height: 30px;
-    width: 10%;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.date {
-    
-    height: 30px;
-    width: 15%;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
 .controll {
-    
-    height: 30px;
     width: 15%;
-    margin-bottom: 30px;
-    text-align: left;
 }
 
 .buttons {
@@ -137,6 +104,13 @@
     border-bottom:2px gray solid;
  }
 
- tr:nth-child(2n) td {
+ /* tdですと、それぞれに色を付与するので処理が若干かかってしまいます。tableの行全体にcssを適用するようにしましょう */
+ tr:nth-child(2n){
     background-color: #ffdaf8;
-  }
+ }
+
+ /* formを中央寄せにします */
+ .form{
+    margin:auto;
+    width:50%;
+ }
